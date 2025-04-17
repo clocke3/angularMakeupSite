@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FirstPageComponent } from './first-page/first-page.component';
+import { SecondPageComponent } from "./second-page/second-page.component";
+import { ThirdPageComponent } from "./third-page/third-page.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [FirstPageComponent, SecondPageComponent, ThirdPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
