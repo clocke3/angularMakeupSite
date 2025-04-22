@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     <div class="content">
       <!-- main page -->
       <div class="mainPage">
-          <img class="logo" [src]="logoUrl" [alt]="logoAlt" [@pulse]>
+          <img class="logo" [src]="logoUrl" [alt]="logoAlt">
       </div>
     </div>
   </div>`,

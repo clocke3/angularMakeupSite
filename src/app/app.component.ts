@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { EighthPageComponent } from './eighth-page/eighth-page.component';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import AOS from 'aos';
 import { FifthPageComponent } from './fifth-page/fifth-page.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { FourthPageComponent } from './fourth-page/fourth-page.component';
@@ -19,11 +20,19 @@ import { ThirdPageComponent } from "./third-page/third-page.component";
     FifthPageComponent,
     SixthPageComponent,
     SeventhPageComponent,
-    EighthPageComponent,
     ProductListPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'makeupWebsite';
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      // Initialize AOS here
+      AOS.init();
+    }
+  }
 }

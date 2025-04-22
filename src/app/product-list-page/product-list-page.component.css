@@ -1,0 +1,24 @@
+section {
+  display: inline-block;
+  margin-left: 4%;
+  margin-bottom: 2%;
+}
+
+p {
+  font-size: 15px;
+  padding-left: 10px;
+  font-family: 'Poppins', 'Poppins', 'sans-serif';
+  padding-top: 6px;
+}
+
+section > div > p {
+  color: white;
+}
+
+.wordCase {
+  background-color: #FFBFF0;
+}
+
+.contacts {
+  background-color: #FFF2FC;
+}
