@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     <div class="content">
       <!-- main page -->
       <div class="mainPage">
-          <img [src]="logoUrl" [alt]="logoAlt">
+          <img class="logo" [src]="logoUrl" [alt]="logoAlt" [@pulse]>
       </div>
     </div>
   </div>`,
@@ -18,3 +18,4 @@ export class FirstPageComponent {
   logoUrl = "assets/images/ahreumLogo.png";
   logoAlt = "Ahreum logo";
 }
+
