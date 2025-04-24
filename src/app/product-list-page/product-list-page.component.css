@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 section {
   display: inline-block;
   margin-left: 4%;
@@ -5,20 +7,24 @@ section {
 }
 
 p {
-  font-size: 15px;
-  padding-left: 10px;
   font-family: 'Poppins', 'Poppins', 'sans-serif';
-  padding-top: 6px;
 }
 
-section > div > p {
-  color: white;
+.productBox {
+  @apply rounded-3xl h-60 w-52 relative;
+}
+
+.image {
+  width: 208px;
+  height: 240px;
+  object-fit: cover;
+  @apply rounded-3xl
 }
 
 .wordCase {
-  background-color: #FFBFF0;
+  @apply bg-[#ffbff0] hover:bg-[#fe9fe8] h-1/6 w-full rounded-b-3xl absolute bottom-0 text-center text-white text-[13px];
 }
 
 .contacts {
-  background-color: #FFF2FC;
+  @apply bg-[#fff2fc] w-screen h-36 absolute bottom-0
 }
