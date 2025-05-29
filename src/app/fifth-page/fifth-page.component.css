@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+
+.out {
+  display: none;
+}

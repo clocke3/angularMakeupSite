@@ -1,1 +1,4 @@
-
+@import 'tailwindcss';
+.lipGloss {
+  @apply h-[600px];
+}

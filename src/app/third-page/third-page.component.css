@@ -4,10 +4,12 @@ p {
   padding-left: 10px;
   font-family: 'Poppins', 'Poppins', 'sans-serif';
 }
+@import 'tailwindcss';
 
-.paragraph1 {
-
+.cushion1 {
+  @apply h-[600px];
 }
 
-.paragraph2 {
+.cushion2 {
+  @apply h-[600px];
 }
