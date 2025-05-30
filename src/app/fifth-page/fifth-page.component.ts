@@ -20,7 +20,6 @@ export class FifthPageComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      // ✅ Only runs in browser, not during SSR
       this.intervalId = setInterval(() => {
        this.startPictureLoop();
       }, 5000);
