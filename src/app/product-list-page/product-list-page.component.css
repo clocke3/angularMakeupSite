@@ -1,22 +1,5 @@
 @import "tailwindcss";
 
-section {
-  display: inline-block;
-  margin-left: 4%;
-  margin-bottom: 2%;
-}
-
-.productBox {
-  @apply rounded-3xl h-60 w-52 relative;
-}
-
-.image {
-  width: 208px;
-  height: 240px;
-  object-fit: cover;
-  @apply rounded-3xl
-}
-
-.wordCase {
-  @apply bg-[#ffbff0] hover:bg-[#fe9fe8] h-1/6 w-full rounded-b-3xl absolute bottom-0 text-center text-white text-[13px];
+td, tr{
+  @apply border-r-[1px];
 }

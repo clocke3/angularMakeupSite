@@ -10,6 +10,7 @@ import { SeventhPageComponent } from './seventh-page/seventh-page.component';
 import { SixthPageComponent } from './sixth-page/sixth-page.component';
 import { ThirdPageComponent } from "./third-page/third-page.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { ContactsComponent } from "./contacts/contacts.component";
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { NavbarComponent } from "./navbar/navbar.component";
     SixthPageComponent,
     SeventhPageComponent,
     ProductListPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactsComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
