@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-fourth-page',
   imports: [],
   templateUrl: './fourth-page.component.html',
-  styleUrl: './fourth-page.component.css'
+  styleUrls: ["../../styles.css", './fourth-page.component.css']
 })
 export class FourthPageComponent {
 

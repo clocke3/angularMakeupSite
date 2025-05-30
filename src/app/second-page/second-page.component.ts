@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-second-page',
   imports: [],
   templateUrl: './second-page.component.html',
-  styleUrl: './second-page.component.css'
+  styleUrls: ["../../styles.css", './second-page.component.css']
 })
 export class SecondPageComponent {
 

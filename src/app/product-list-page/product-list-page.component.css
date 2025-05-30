@@ -6,10 +6,6 @@ section {
   margin-bottom: 2%;
 }
 
-p {
-  font-family: 'Poppins', 'Poppins', 'sans-serif';
-}
-
 .productBox {
   @apply rounded-3xl h-60 w-52 relative;
 }
@@ -23,8 +19,4 @@ p {
 
 .wordCase {
   @apply bg-[#ffbff0] hover:bg-[#fe9fe8] h-1/6 w-full rounded-b-3xl absolute bottom-0 text-center text-white text-[13px];
-}
-
-.contacts {
-  @apply bg-[#fff2fc] w-screen h-36 absolute bottom-0
 }

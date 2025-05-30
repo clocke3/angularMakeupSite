@@ -5,7 +5,7 @@ import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID } from '@angul
   selector: 'app-seventh-page',
   imports: [],
   templateUrl: './seventh-page.component.html',
-  styleUrl: './seventh-page.component.css'
+  styleUrls: ["../../styles.css", './seventh-page.component.css']
 })
 export class SeventhPageComponent implements AfterViewInit, OnDestroy {
   private intervalId: any;

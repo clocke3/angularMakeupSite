@@ -1,10 +1,9 @@
+@import 'tailwindcss';
 
 p {
   font-size: 22px;
   padding-left: 10px;
-  font-family: 'Poppins', 'Poppins', 'sans-serif';
 }
-@import 'tailwindcss';
 
 .cushion1 {
   @apply h-[600px];

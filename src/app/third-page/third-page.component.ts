@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-third-page',
   imports: [],
   templateUrl: './third-page.component.html',
-  styleUrl: './third-page.component.css'
+  styleUrls: ["../../styles.css", './third-page.component.css']
 })
 export class ThirdPageComponent {
 }

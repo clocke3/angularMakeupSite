@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild, Inject} from '@angular/core';
+import { Component, HostListener, Inject} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -8,15 +8,12 @@ import { DOCUMENT } from '@angular/common';
   <div>
     <div class="content">
       <div id="page" class="mainPage">
-        <img class="logo" [src]="logoUrl" [alt]="logoAlt" />
       </div>
     </div>
   </div>`,
-  styleUrl: './first-page.component.css',
+ styleUrls: ["../../styles.css",'./first-page.component.css'],
 })
 export class FirstPageComponent {
-  logoUrl = 'assets/images/ahreumLogo.png';
-  logoAlt = 'Ahreum logo';
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
   @HostListener('window:scroll')
