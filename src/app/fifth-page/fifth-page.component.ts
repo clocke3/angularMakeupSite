@@ -1,4 +1,6 @@
 import { DOCUMENT } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 import { AfterViewInit, Component, Inject, OnDestroy } from '@angular/core';
 
 @Component({
@@ -7,41 +9,50 @@ import { AfterViewInit, Component, Inject, OnDestroy } from '@angular/core';
   templateUrl: './fifth-page.component.html',
   styleUrl: './fifth-page.component.css'
 })
-export class FifthPageComponent implements AfterViewInit, OnDestroy  {
+export class FifthPageComponent implements AfterViewInit, OnDestroy {
   private intervalId: any;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
+
 
   ngAfterViewInit() {
-    this.startPictureLoop();
+    if (isPlatformBrowser(this.platformId)) {
+      // ✅ Only runs in browser, not during SSR
+      this.intervalId = setInterval(() => {
+       this.startPictureLoop();
+      }, 5000);
+    }
   }
 
   startPictureLoop() {
-    const elements = ['blush1', 'blush2', 'blush3', 'blush4'];
+    setTimeout(() => {
+      this.document.getElementById("blush1").classList.add('out');
+    }, 1000);
 
-    this.intervalId = setInterval(() => {
-      elements.forEach((id, index) => {
-        const el = this.document.getElementById(id);
-        if (el) {
-          // Reset first
-          el.classList.remove('out');
+    setTimeout(() => {
+      this.document.getElementById("blush2").classList.add('out');
+    }, 2000);
 
-          // Add class with delay
-          setTimeout(() => {
-            el.classList.add('out');
-          }, 1000 * (index + 1));
+    setTimeout(() => {
+      this.document.getElementById("blush3").classList.add('out');
+    }, 3000);
 
-          // Optionally remove again
-          setTimeout(() => {
-            el.classList.remove('out');
-          }, 1000 * (index + 1) + 2000);
-        }
-      });
-    }, 6000);
+    setTimeout(() => {
+      this.document.getElementById("blush4").classList.add('out');
+    }, 4000);
+
+    setTimeout(() => {
+      this.document.getElementById("blush1").classList.remove('out');
+      this.document.getElementById("blush2").classList.remove('out');
+      this.document.getElementById("blush3").classList.remove('out');
+      this.document.getElementById("blush4").classList.remove('out');
+    }, 5000);
   }
 
   ngOnDestroy() {
-    // Clean up interval to prevent memory leaks
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
