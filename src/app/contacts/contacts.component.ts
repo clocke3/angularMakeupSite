@@ -1,6 +1,4 @@
-import { Component, Inject } from '@angular/core';
-import { QuickViewModalComponent } from "../quick-view-modal/quick-view-modal.component";
-import { DOCUMENT } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contacts',

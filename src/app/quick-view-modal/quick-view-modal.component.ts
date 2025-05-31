@@ -1,10 +1,8 @@
-import { CommonModule, DOCUMENT } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
   EventEmitter,
-  HostListener,
-  Inject,
   Input,
   Output,
   QueryList,
@@ -19,7 +17,6 @@ import {
   styleUrl: './quick-view-modal.component.css',
 })
 export class QuickViewModalComponent {
-  constructor(@Inject(DOCUMENT) private document: Document) {}
   @ViewChildren('colorBtn') colorButtons!: QueryList<
     ElementRef<HTMLButtonElement>
   >;
