@@ -1,16 +1,16 @@
 <div class="h-24 pt-3 bg-better-pink relative font-garamond">
   <div class="leftSide float-left ml-10">
     <img src="assets/images/ahreumLogo.png" class="w-[200px]" />
-    <p class="pl-2">Beauty where you need it</p>
+    <p class="relative bottom-1.5 text-lg text-gray-600 pl-0.5">Beauty where you need it</p>
   </div>
   <div class="rightSide float-right grid grid-cols-2 gap-16">
     <section>
       <p class="contact"></p>
-      <p class="careers">Work with us</p>
-      <p class="newsletter">Join our newsletter</p>
+      <p class="careers hover:text-pink-400">Work with us</p>
+      <p class="newsletter hover:text-pink-400">Join our newsletter</p>
     </section>
     <section>
-      <button class="flex flex-row gap-1 cursor-pointer">
+      <button class="flex flex-row gap-1 cursor-pointer hover:text-pink-400" (click)="scrollToTop()">
         <p>Back to top</p>
         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M18 11l-6 -6" /><path d="M6 11l6 -6" /></svg>
       </button>
