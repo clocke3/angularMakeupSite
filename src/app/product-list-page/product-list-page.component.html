@@ -3,35 +3,39 @@
   <div class="productList grid grid-cols-3 place-content-stretch ml-32">
     <section>
       <img src="assets/images/blush_main.jpg" class="rounded-4xl border-[1px] border-gray-500"/>
-      <button>
+      <button (click)="display('blush')">
         Quick View
       </button>
     </section>
     <section>
       <img src="assets/images/cushion_mock-up 2.jpg" class="rounded-4xl border-[1px] border-gray-500"/>
-      <button>
+      <button (click)="display('cushion')">
         Quick View
       </button>
     </section>
     <section>
       <img src="assets/images/lip_balm_mock-up.jpg" class="rounded-4xl object-top border-[1px] border-gray-500"/>
-      <button>
+      <button (click)="display('lip')">
         Quick View
       </button>
     </section>
     <section>
       <img src="assets/images/tote_mock-up.jpg" class="rounded-4xl object-top border-[1px] border-gray-500"/>
-      <button>
+      <button (click)="display('tote')">
         Quick View
       </button>
     </section>
     <section>
       <img src="assets/images/tshirt_mock-up.jpg" class="rounded-4xl border-[1px] border-gray-500"/>
-      <button>
+      <button (click)="display('tshirt')">
         Quick View
       </button>
     </section>
   </div>
   <div class="w-screen border-[0.5px] border-gray-400"></div>
 
+  <!-- quick view render -->
+  <div>
+    <app-quick-view-modal *ngIf="showComponent" (closeEvent)="showComponent = false" [imageUrl]="imageUrl" [productName]="productName" [description]="description" [colors]="colors" [price]="price"></app-quick-view-modal>
+   </div>
 </div>

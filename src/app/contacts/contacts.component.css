@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+.contact:after {
+  content: 'Contact us';
+}
+
+.contact:hover:after {
+  content: '(+1) 000-000-0500';
+}
+
