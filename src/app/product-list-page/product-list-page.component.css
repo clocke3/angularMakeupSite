@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
-td, tr{
-  @apply border-r-[1px];
+section > button {
+  @apply bg-white rounded-3xl border-[1px] border-gray-500 p-3 z-10 relative bottom-5 left-[95px] cursor-pointer;
+}
+
+section > button:hover {
+  @apply bg-gray-500 text-white;
+}
+
+
+img {
+  @apply h-[300px] w-[300px] object-cover;
 }
