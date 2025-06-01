@@ -1,13 +1,16 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
+  effect,
   ElementRef,
   EventEmitter,
   Input,
   Output,
   QueryList,
   ViewChildren,
+  WritableSignal,
 } from '@angular/core';
+import { SessionStateService } from '../services/session.service';
 
 @Component({
   selector: 'app-quick-view-modal',
@@ -32,9 +35,29 @@ export class QuickViewModalComponent {
   selectedColor: string | null = null;
   savedColorBtn: HTMLButtonElement | null = null;
   showIcon = false;
+  newItem: WritableSignal<any[]> | null = null;
+
+  constructor(private session: SessionStateService) {
+    effect(() =>{
+      if (this.newItem) {
+        this.session.newItem = this.newItem;
+      }
+    })
+  }
+
 
   close() {
     this.closeEvent.emit();
+  }
+
+  addToCart() {
+    console.log('Made it here');
+    this.newItem.set([
+      this.productName,
+      this.selectedColor,
+      this.price
+    ]);
+    this.close();
   }
 
   chooseColor(input: string) {

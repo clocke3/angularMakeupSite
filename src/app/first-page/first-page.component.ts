@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-first-page',
+  standalone: true,
   imports: [],
   template: `
   <div>

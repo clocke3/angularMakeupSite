@@ -1,12 +1,14 @@
-<app-navbar></app-navbar>
-<div>
-  <app-first-page></app-first-page>
-  <app-second-page></app-second-page>
-  <app-third-page></app-third-page>
-  <app-fourth-page></app-fourth-page>
-  <app-fifth-page></app-fifth-page>
-  <app-sixth-page></app-sixth-page>
-  <app-seventh-page></app-seventh-page>
-  <app-product-list-page></app-product-list-page>
-  <app-contacts></app-contacts>
-</div>
+<nav class="h-16 w-full bg-better-pink border-b-[1px] border-b-gray-400 fixed z-50 font-garamond text-xl">
+  <section class="float-left mt-5 grid grid-cols-2 gap-6 ml-7">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Shop</a>
+    <p>About us</p>
+  </section>
+  <section class="fixed top-[2%] left-[45%]">
+    <img src="assets/images/ahreumLogo.png" class="logo w-[150px]" />
+  </section>
+  <section class="float-right mt-5 grid grid-cols-2 gap-6 mr-7">
+    <p>My Account</p>
+    <a routerLink="/cart" routerLinkActive="active">Cart</a>
+  </section>
+</nav>
+<router-outlet></router-outlet>

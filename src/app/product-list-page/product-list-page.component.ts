@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuickViewModalComponent } from "../quick-view-modal/quick-view-modal.component";
+import { QuickViewModalComponent } from "../shared/quick-view-modal/quick-view-modal.component";
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,7 +16,6 @@ export class ProductListPageComponent {
   description: string;
   colors: string[];
   price: string;
-
 
   display(data: string) {
     if (data === 'blush') {

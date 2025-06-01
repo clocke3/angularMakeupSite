@@ -3,6 +3,7 @@ import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID } from '@angul
 
 @Component({
   selector: 'app-seventh-page',
+  standalone: true,
   imports: [],
   templateUrl: './seventh-page.component.html',
   styleUrls: ["../../styles.css", './seventh-page.component.css']

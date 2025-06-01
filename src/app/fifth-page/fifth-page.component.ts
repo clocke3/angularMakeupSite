@@ -5,6 +5,7 @@ import { AfterViewInit, Component, Inject, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-fifth-page',
+  standalone: true,
   imports: [],
   templateUrl: './fifth-page.component.html',
   styleUrls: ["../../styles.css", './fifth-page.component.css']
