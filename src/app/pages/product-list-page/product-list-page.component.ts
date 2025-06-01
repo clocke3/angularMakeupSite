@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuickViewModalComponent } from "../shared/quick-view-modal/quick-view-modal.component";
+import { QuickViewModalComponent } from "../../shared/quick-view-modal/quick-view-modal.component";
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, QuickViewModalComponent],
   templateUrl: './product-list-page.component.html',
-  styleUrls: ["../../styles.css", './product-list-page.component.css']
+  styleUrls: ["../../../styles.css", './product-list-page.component.css']
 })
 export class ProductListPageComponent {
   showComponent = false;

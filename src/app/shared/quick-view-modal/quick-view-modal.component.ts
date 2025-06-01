@@ -7,6 +7,7 @@ import {
   Input,
   Output,
   QueryList,
+  signal,
   ViewChildren,
   WritableSignal,
 } from '@angular/core';
@@ -31,11 +32,11 @@ export class QuickViewModalComponent {
   @Input() price!: string;
 
   @Output() closeEvent = new EventEmitter<void>();
-  @Output() newColor = new EventEmitter<string>();
   selectedColor: string | null = null;
   savedColorBtn: HTMLButtonElement | null = null;
   showIcon = false;
-  newItem: WritableSignal<any[]> | null = null;
+  newItem: WritableSignal<any[] | null> = signal(null);
+  errors: string[] = [];
 
   constructor(private session: SessionStateService) {
     effect(() =>{
@@ -45,19 +46,22 @@ export class QuickViewModalComponent {
     })
   }
 
-
   close() {
     this.closeEvent.emit();
   }
 
   addToCart() {
-    console.log('Made it here');
-    this.newItem.set([
-      this.productName,
-      this.selectedColor,
-      this.price
-    ]);
-    this.close();
+    if (this.productName && this.selectedColor && this.price) {
+      const item: any[] = [
+        this.productName,
+        this.selectedColor,
+        this.price
+      ];
+      this.newItem.set(item);
+      this.close();
+    } else {
+      this.errors.push('Need to select a color!');
+    }
   }
 
   chooseColor(input: string) {

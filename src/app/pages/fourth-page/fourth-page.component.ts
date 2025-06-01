@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './fourth-page.component.html',
-  styleUrls: ["../../styles.css", './fourth-page.component.css']
+  styleUrls: ["../../../styles.css", './fourth-page.component.css']
 })
 export class FourthPageComponent {
 

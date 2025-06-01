@@ -12,7 +12,7 @@ import { DOCUMENT } from '@angular/common';
       </div>
     </div>
   </div>`,
- styleUrls: ["../../styles.css",'./first-page.component.css'],
+ styleUrls: ["../../../styles.css",'./first-page.component.css'],
 })
 export class FirstPageComponent {
   constructor(@Inject(DOCUMENT) private document: Document) {}

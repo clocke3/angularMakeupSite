@@ -12,10 +12,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class ShoppingCartComponent {
-  @Input() products: Product[];
+  products: Product[];
 
   constructor(private session: SessionStateService) {
-    effect(() => this.updateCart(this.session.newItem, this.session.cartItems));
+    effect(() =>
+    {
+      this.updateCart(this.session.newItem, this.session.cartItems);
+      this.products = this.session.cartItems();
+    }
+    )
   }
 
   updateCart(item: WritableSignal<any[]>, cart: WritableSignal<Product[]>) {
@@ -26,5 +31,6 @@ export class ShoppingCartComponent {
       price: newItem[2],
     }
     cart.update(current => [...current, foundProduct]);
+    console.log(cart());
   }
 }

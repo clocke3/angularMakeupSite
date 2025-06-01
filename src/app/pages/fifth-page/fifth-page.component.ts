@@ -8,7 +8,7 @@ import { AfterViewInit, Component, Inject, OnDestroy } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './fifth-page.component.html',
-  styleUrls: ["../../styles.css", './fifth-page.component.css']
+  styleUrls: ["../../../styles.css", './fifth-page.component.css']
 })
 export class FifthPageComponent implements AfterViewInit, OnDestroy {
   private intervalId: any;

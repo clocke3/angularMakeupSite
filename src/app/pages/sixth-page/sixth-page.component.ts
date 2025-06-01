@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './sixth-page.component.html',
-  styleUrls: ["../../styles.css", './sixth-page.component.css']
+  styleUrls: ["../../../styles.css", './sixth-page.component.css']
 })
 export class SixthPageComponent {
 
