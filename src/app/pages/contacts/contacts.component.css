@@ -8,3 +8,7 @@
   content: '(+1) 000-000-0500';
 }
 
+.rightSide > section > p:hover {
+  @apply cursor-pointer text-pink-400;
+}
+
