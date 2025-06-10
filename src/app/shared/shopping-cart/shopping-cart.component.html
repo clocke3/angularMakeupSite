@@ -1,12 +1,21 @@
 <div class="h-screen w-screen bg-better-pink">
-  <div class="relative top-10">
-    Cart
-    <div *ngFor="let product of products" >
-      <div>
-          <p>{{ product.name }}</p>
-          <p>{{ product.color }}</p>
-          <p>{{ product.price }}</p>
+  <div class="relative top-24 ml-[55px] h-9/12 w-11/12 bg-white rounded-4xl flex flex-col">
+    <span class="m-8 text-3xl text-gray-400 font-poppins font-bold mb-4">
+      Cart
+    </span>
+    <div class="ml-4.5 w-[97%] border-b-[1px] border-gray-600"></div>
+    <!-- <div *ngIf="mapEntries?.length > 0">
+      <div *ngFor="let product of mapEntries">
+        <div>
+          <p>{{ product[0] }}</p>
+          <p>{{ product[1] }}</p>
+        </div>
       </div>
-  </div>
+    </div> -->
+    <!-- <div *ngIf="mapEntries?.length == 0" class="text-center m-auto">
+     <span class="text-5xl font-garamond font-bold text-gray-500">
+      no items found in cart.
+     </span>
+    </div> -->
   </div>
 </div>
