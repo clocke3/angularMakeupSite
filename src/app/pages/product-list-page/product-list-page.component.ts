@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { QuickViewModalComponent } from "../../shared/quick-view-modal/quick-view-modal.component";
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-product-list-page',
   standalone: true,
-  imports: [CommonModule, QuickViewModalComponent],
+  imports: [QuickViewModalComponent],
   templateUrl: './product-list-page.component.html',
   styleUrls: ["../../../styles.css", './product-list-page.component.css']
 })

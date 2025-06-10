@@ -1,6 +1,6 @@
-import { DOCUMENT } from '@angular/common';
+
 import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID } from '@angular/core';
+import { PLATFORM_ID, DOCUMENT } from '@angular/core';
 import { AfterViewInit, Component, Inject, OnDestroy } from '@angular/core';
 
 @Component({

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   Component,
   effect,
@@ -16,7 +16,7 @@ import { SessionStateService } from '../services/session.service';
 @Component({
   selector: 'app-quick-view-modal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './quick-view-modal.component.html',
   styleUrl: './quick-view-modal.component.css',
 })

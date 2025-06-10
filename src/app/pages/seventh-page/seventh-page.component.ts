@@ -1,5 +1,5 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID, DOCUMENT } from '@angular/core';
 
 @Component({
   selector: 'app-seventh-page',

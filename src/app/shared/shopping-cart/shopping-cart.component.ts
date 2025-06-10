@@ -1,11 +1,11 @@
 import { Component, computed, effect, inject } from '@angular/core';
 import { Product } from './product';
 import { SessionStateService } from '../services/session.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-shopping-cart',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './shopping-cart.component.html',
   styleUrl: './shopping-cart.component.css',
   standalone: true,

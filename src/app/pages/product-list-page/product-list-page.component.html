@@ -36,6 +36,8 @@
 
   <!-- quick view render -->
   <div>
-    <app-quick-view-modal *ngIf="showComponent" (closeEvent)="showComponent = false" [imageUrl]="imageUrl" [productName]="productName" [description]="description" [colors]="colors" [price]="price"></app-quick-view-modal>
-   </div>
+    @if (showComponent) {
+      <app-quick-view-modal (closeEvent)="showComponent = false" [imageUrl]="imageUrl" [productName]="productName" [description]="description" [colors]="colors" [price]="price"></app-quick-view-modal>
+    }
+  </div>
 </div>

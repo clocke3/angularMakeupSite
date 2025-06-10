@@ -1,5 +1,5 @@
-import { Component, HostListener, Inject} from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, HostListener, Inject, DOCUMENT } from '@angular/core';
+
 
 @Component({
   selector: 'app-first-page',
