@@ -5,4 +5,5 @@ export interface User {
   phoneNumber: string;
   created: Date;
   lastLogin: Date;
+  currentSession: string;
 }
