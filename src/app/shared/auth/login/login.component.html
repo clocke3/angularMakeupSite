@@ -1,15 +1,15 @@
 <div class="h-screen w-screen bg-better-pink">
   <div class="h-1/2 w-1/4">
-    <div class="relative top-20 m-auto grid grid-rows-2 gap-7">
-      <section class="grid grid-rows-2">
-        <label>Username</label>
-        <input type="text" class="border-2">
-      </section>
-      <section class="grid grid-rows-2">
-        <label>Password</label>
-        <input type="text" class="border-2">
-      </section>
-      <button class="h-8 w-24 rounded-lg bg-pink-500 text-white">Submit</button>
-    </div>
+    <form (ngSubmit)="login()">
+      <div>
+        <label for="email">Email</label>
+        <input formControlName="email"  type="email" required>
+        <label for="password">Password</label>
+        <input formControlName="password" type="password" required>
+      </div>
+      <button>Submit</button>
+      <span>Don't have an account?
+      <a routerLink="/createAccount">Sign Up</a></span>
+    </form>
   </div>
 </div>
