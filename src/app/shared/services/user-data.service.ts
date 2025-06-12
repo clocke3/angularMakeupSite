@@ -16,7 +16,14 @@ export class UserDataService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
-  getUser(email: string): Observable<User> {
+  getUserBySession(session: string): Observable<User> {
+    const url = `${this.apiUrl}?currentSession=${encodeURIComponent(session)}`;
+    return this.http.get<User[]>(url).pipe(
+      map(users => users[0]) // Return the first match or undefined
+    );
+  }
+
+  getUserByEmail(email: string): Observable<User> {
     const url = `${this.apiUrl}?email=${encodeURIComponent(email)}`;
     return this.http.get<User[]>(url).pipe(
       map(users => users[0]) // Return the first match or undefined

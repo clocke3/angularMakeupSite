@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { UserDataService } from "../../services/user-data.service";
 
 @Component({
@@ -16,19 +16,20 @@ import { UserDataService } from "../../services/user-data.service";
 })
 export class LoginComponent {
   @Input() loginForm!: FormGroup;
+  @Output() error: string;
 
   constructor(private userDataService: UserDataService, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
+    this.error = '';
   }
 
   login() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.validateAccount(email);
-      // Add your login logic here
     } else {
       console.log('Form is invalid');
       this.loginForm.markAllAsTouched();
@@ -36,19 +37,15 @@ export class LoginComponent {
   }
 
   validateAccount(email: string){
-    this.userDataService.getUser(email).subscribe(user => {
+    this.userDataService.getUserByEmail(email).subscribe(user => {
       if (user) {
-        console.log('we found a user!')
         // reset session data
-        // redirect to account page with its data
+        user.currentSession = localStorage.getItem('session');
+        // redirect to account page
+        // this.router.navigate(['/account']);
       } else {
-        console.log("user not found")
-        // throw errors
+        this.error = 'User Not Found';
       }
     });
-  }
-
-  createAccount() {
-
   }
 }

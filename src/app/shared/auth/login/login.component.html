@@ -26,9 +26,12 @@
           } -->
         </section>
       </div>
+      @if (error.length > 0) {
+        <span class="text-red-500 font-poppins font-bold">{{ error }}</span>
+      }
       <button type="submit" class="h-10 w-30 bg-white text-black rounded-xl">Submit</button>
       <span>Don't have an account?
-        <a class="hover:text-blue-600" routerLink="/createAccount">Sign Up</a>
+        <a class="hover:text-blue-600" routerLink="/create-account">Sign Up</a>
       </span>
     </form>
   </div>

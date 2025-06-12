@@ -39,7 +39,6 @@ export class AppComponent {
     this.userDataService.getUsers()
     .subscribe(users => {
       this.users = users;
-      // console.log('Loaded users:', users);
     });
   }
 }
