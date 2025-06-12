@@ -11,7 +11,7 @@ import {
   ViewChildren,
   WritableSignal,
 } from '@angular/core';
-import { SessionStateService } from '../services/session.service';
+import { SessionStateService } from '../services/sessions/session-state.service';
 
 @Component({
   selector: 'app-quick-view-modal',

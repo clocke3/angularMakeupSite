@@ -1,15 +1,35 @@
 <div class="h-screen w-screen bg-better-pink">
-  <div class="h-1/2 w-1/4">
-    <form (ngSubmit)="login()">
-      <div>
-        <label for="email">Email</label>
-        <input formControlName="email"  type="email" required>
-        <label for="password">Password</label>
-        <input formControlName="password" type="password" required>
+  <div class="relative top-20">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="grid grid-rows-3 gap-5">
+      <div class="grid grid-rows-2 gap-4">
+        <section>
+          <label for="email" class="mr-4">Email</label>
+          <input id="email" formControlName="email" type="email" class="border-2" />
+          @if (loginForm.controls['email'].invalid && loginForm.controls['email'].touched) {
+            <div class="text-red-600">
+              @if (loginForm.controls['email'].errors?.['required']) {
+                <small>Email is required.</small>
+              }
+              @if (loginForm.controls['email'].errors?.['email']) {
+                <small>Invalid email format.</small>
+              }
+            </div>
+          }
+        </section>
+        <section>
+          <label for="password" class="mr-4">Password</label>
+          <input id="password" formControlName="password" type="password" class="border-2" />
+          @if (loginForm.controls['password'].invalid && loginForm.controls['password'].touched) {
+            <div class="text-red-600">
+              <small>Password is required.</small>
+            </div>
+          }
+        </section>
       </div>
-      <button>Submit</button>
+      <button type="submit" class="h-10 w-30 bg-white text-black rounded-xl">Submit</button>
       <span>Don't have an account?
-      <a routerLink="/createAccount">Sign Up</a></span>
+        <a routerLink="/createAccount">Sign Up</a>
+      </span>
     </form>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, computed, effect, inject } from '@angular/core';
 import { Product } from './product';
-import { SessionStateService } from '../services/session.service';
+import { SessionStateService } from '../services/sessions/session-state.service';
 
 
 @Component({

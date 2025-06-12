@@ -1,8 +1,8 @@
 export interface User {
-  firstName: string;
-  lastName: string;
   email: string;
-  phoneNumber: string;
+  firstName: string | null;
+  lastName: string | null;
+  phoneNumber: string | null;
   created: Date;
   lastLogin: Date;
   currentSession: string;

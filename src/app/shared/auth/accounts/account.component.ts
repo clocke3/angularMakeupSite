@@ -21,7 +21,6 @@ export class AccountComponent implements OnInit {
   }
 
   goToLoginPage() {
-    console.log('Navigating to login...');
     this.router.navigate(['/login']);
   }
 }
