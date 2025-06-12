@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InMemoryDbService, ResponseOptions, STATUS } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { User } from '../auth/users/user';
 
 @Injectable({ providedIn: 'root' })
@@ -8,6 +8,7 @@ export class InMemoryDataService implements InMemoryDbService {
   const users: User[] = [
     {
       email: 'tmaxwell@yahoo.com',
+      password: 'tmaxwell',
       firstName: 'Trixie',
       lastName: 'Maxwell',
       phoneNumber: '000-000-0005',
