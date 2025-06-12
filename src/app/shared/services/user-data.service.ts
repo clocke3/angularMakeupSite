@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../auth/users/user';
 import { map } from 'rxjs/operators'
 
@@ -9,8 +9,18 @@ import { map } from 'rxjs/operators'
 })
 export class UserDataService {
   private apiUrl = 'api/users';
+  private currentUserSubject = new BehaviorSubject<User | null>(null);
+  currentUser$ = this.currentUserSubject.asObservable();
 
   constructor(private http: HttpClient) {}
+
+  setUser(user: User) {
+    this.currentUserSubject.next(user);
+  }
+
+  clearUser() {
+    this.currentUserSubject.next(null);
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl);

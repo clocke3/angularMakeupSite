@@ -15,15 +15,14 @@ import { UserDataService } from "../../services/user-data.service";
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  @Input() loginForm!: FormGroup;
-  @Output() error: string;
+  loginForm!: FormGroup;
+  error: string = '';
 
-  constructor(private userDataService: UserDataService, private fb: FormBuilder) {
+  constructor(private userDataService: UserDataService, private router: Router, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
-    this.error = '';
   }
 
   login() {
@@ -36,13 +35,13 @@ export class LoginComponent {
     }
   }
 
-  validateAccount(email: string){
+  validateAccount(email: string) {
     this.userDataService.getUserByEmail(email).subscribe(user => {
       if (user) {
-        // reset session data
         user.currentSession = localStorage.getItem('session');
-        // redirect to account page
-        // this.router.navigate(['/account']);
+        user.loggedIn = true;
+        this.userDataService.setUser(user);
+        this.router.navigate(['/account']);
       } else {
         this.error = 'User Not Found';
       }

@@ -14,6 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
       phoneNumber: '000-000-0005',
       created: this.getRandomDate(),
       lastLogin: new Date(),
+      loggedIn: false,
       currentSession: '0123456789abcdef',
     },
   ];

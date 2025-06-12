@@ -2,6 +2,13 @@
   <div class="relative top-20 left-2.5">
   @if(user) {
       <p> Account Info </p>
+      <p>{{ user.firstName }}</p>
+      <p>{{ user.lastName }}</p>
+      <p>{{ user.email }}</p>
+      <p> {{user.lastLogin }}</p>
+      <button class="bg-black text-white w-sm rounded-xl" (click)="logout()">
+        Log Out
+      </button>
   } @else {
     <p>Not logged in</p>
     <button class="bg-black text-white w-sm rounded-xl"(click)="goToLoginPage()">Login</button>

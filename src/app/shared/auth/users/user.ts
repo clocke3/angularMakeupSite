@@ -5,6 +5,7 @@ export interface User {
   lastName: string;
   phoneNumber: string | null;
   created: Date;
+  loggedIn: boolean;
   lastLogin: Date;
   currentSession: string;
 }
