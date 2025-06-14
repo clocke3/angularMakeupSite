@@ -5,22 +5,20 @@
     </span>
     <div class="ml-4.5 w-[97%] border-b-[1px] border-gray-600"></div>
     @if (user && overallPrice > 0) {
-      <p class="text-black">{{ overallPrice }}</p>
-    } @else {
-      <p class="text-black">No items in cart</p>
-    }
-    <!-- <div *ngIf="mapEntries?.length > 0">
-      <div *ngFor="let product of mapEntries">
+      @for (prod of productMap; track prod[0]) {
         <div>
-          <p>{{ product[0] }}</p>
-          <p>{{ product[1] }}</p>
+          <p>{{ prod[1].product.name }}</p>
+          <p>{{ prod[1].product.color}}</p>
+          <p>{{ prod[1].product.price}}</p>
+          <p>{{ prod[1].quantity }}</p>
+          <div class="border-b-2 border-b-black"></div>
         </div>
-      </div>
-    </div> -->
-    <!-- <div *ngIf="mapEntries?.length == 0" class="text-center m-auto">
-     <span class="text-5xl font-garamond font-bold text-gray-500">
-      no items found in cart.
-     </span>
-    </div> -->
+      }
+      <p class="text-black">Total Price: {{ overallPrice }}</p>
+    } @else {
+      <span class="text-5xl font-garamond font-bold text-gray-500">
+        no items found in cart.
+       </span>
+    }
   </div>
 </div>
