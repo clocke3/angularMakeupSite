@@ -4,6 +4,11 @@
       Cart
     </span>
     <div class="ml-4.5 w-[97%] border-b-[1px] border-gray-600"></div>
+    @if (user && overallPrice > 0) {
+      <p class="text-black">{{ overallPrice }}</p>
+    } @else {
+      <p class="text-black">No items in cart</p>
+    }
     <!-- <div *ngIf="mapEntries?.length > 0">
       <div *ngFor="let product of mapEntries">
         <div>

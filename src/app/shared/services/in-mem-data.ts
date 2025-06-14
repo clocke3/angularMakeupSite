@@ -16,6 +16,7 @@ export class InMemoryDataService implements InMemoryDbService {
       lastLogin: new Date(),
       loggedIn: false,
       currentSession: '0123456789abcdef',
+      cart: [],
     },
   ];
   return { users };

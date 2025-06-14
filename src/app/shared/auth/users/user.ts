@@ -1,3 +1,5 @@
+import { Product } from "../../shopping-cart/product";
+
 export interface User {
   email: string;
   password: string;
@@ -8,4 +10,5 @@ export interface User {
   loggedIn: boolean;
   lastLogin: Date;
   currentSession: string;
+  cart: Product[];
 }

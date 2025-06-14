@@ -1,17 +1,17 @@
 
 import {
   Component,
-  effect,
   ElementRef,
   EventEmitter,
   Input,
   Output,
   QueryList,
-  signal,
   ViewChildren,
-  WritableSignal,
 } from '@angular/core';
-import { SessionStateService } from '../services/sessions/session-state.service';
+import { UserDataService } from '../services/user-data.service';
+import { Product } from '../shopping-cart/product';
+import { User } from '../auth/users/user';
+import { SessionService } from '../services/sessions/session.service';
 
 @Component({
   selector: 'app-quick-view-modal',
@@ -35,29 +35,39 @@ export class QuickViewModalComponent {
   selectedColor: string | null = null;
   savedColorBtn: HTMLButtonElement | null = null;
   showIcon = false;
-  newItem: WritableSignal<any[] | null> = signal(null);
   errors: string[] = [];
+  sessionValue: string | null = null;
+  user: User | null = null;
 
-  constructor(private session: SessionStateService) {
-    effect(() =>{
-      if (this.newItem) {
-        this.session.newItem = this.newItem;
+  constructor(private session: SessionService, private userDataService: UserDataService) {
+  }
+
+  ngOnInit() {
+    const stored = this.session.getSession();
+    this.sessionValue = stored;
+    this.userDataService.currentUser$.subscribe(u => {
+      if (u?.loggedIn) {
+        this.user = u;
       }
-    })
+    });
   }
 
   close() {
     this.closeEvent.emit();
   }
 
-  addToCart() {
+  addToUserCart() {
+    // grab product
     if (this.productName && this.selectedColor && this.price) {
-      const item: any[] = [
-        this.productName,
-        this.selectedColor,
-        this.price
-      ];
-      this.newItem.set(item);
+      const item: Product = {
+        name: this.productName,
+        color: this.selectedColor,
+        price: this.price
+    };
+    // add item to user cart
+      this.user.cart.push(item);
+
+    // close
       this.close();
     } else {
       this.errors.push('Need to select a color!');
